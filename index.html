@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ismail Özcan – Senior Requirements Engineer</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --steel: #2d4a6e;
+    --gold: #c8a84b;
+    --light: #f5f7fa;
+    --white: #ffffff;
+    --text: #2c3e50;
+    --muted: #6b7d8f;
+    --border: #dce4ed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* LANGUAGE SWITCHER */
+  .lang-bar {
+    background: var(--navy);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+    padding: 4px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--steel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--gold);
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+    color: var(--white);
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+
+  .hero-text .title {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 8px 0 20px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .hero-contact {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-contact a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .hero-contact a:hover { color: var(--gold); }
+
+  /* GOLD LINE */
+  .gold-line {
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 50px;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 40px; }
+
+  .section-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section p {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+  }
+
+  .exp-item:hover { border-left-color: var(--gold); }
+
+  .exp-company {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--navy);
+  }
+
+  .exp-role {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 2px 0;
+  }
+
+  .exp-period {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .exp-desc {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  /* SIDEBAR */
+  .sidebar {}
+
+  .skill-group { margin-bottom: 28px; }
+
+  .skill-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--navy);
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin: 3px 3px 3px 0;
+  }
+
+  .cert-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+  }
+
+  .cert-item strong {
+    display: block;
+    color: var(--navy);
+    font-size: 12px;
+  }
+
+  .cert-item span {
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  .edu-item {
+    margin-bottom: 16px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .edu-item strong {
+    display: block;
+    font-size: 12px;
+    color: var(--navy);
+  }
+
+  .edu-item span {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    text-align: center;
+    padding: 24px;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+  }
+
+  /* LANGUAGE CONTENT */
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; padding: 40px 20px; gap: 24px; }
+    .main { grid-template-columns: 1fr; padding: 30px 20px; }
+    .hero-text h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('tr')">TR</button>
+</div>
+
+<!-- HERO -->
+<div style="background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);">
+  <div class="hero">
+    <div class="hero-photo">I</div>
+    <div class="hero-text">
+      <h1>İsmail Özcan</h1>
+
+      <div class="lang-content active" id="hero-de">
+        <p class="title">Senior Requirements Engineer · Berlin</p>
+      </div>
+      <div class="lang-content" id="hero-en">
+        <p class="title">Senior Requirements Engineer · Berlin</p>
+      </div>
+      <div class="lang-content" id="hero-tr">
+        <p class="title">Kıdemli Gereksinim Mühendisi · Berlin</p>
+      </div>
+
+      <div class="hero-contact">
+        <a href="mailto:ismail.oezcan@yahoo.de">✉ ismail.oezcan@yahoo.de</a>
+        <a href="tel:+491637829700">✆ +49 163 7829700</a>
+        <a href="#">⊞ Berlin, Deutschland</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gold-line"></div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="left">
+
+    <!-- PROFIL DE -->
+    <div class="lang-content active" id="profil-de">
+      <div class="section">
+        <div class="section-label">Profil</div>
+        <p>Senior Requirements Engineer und Systemingenieur mit über 15 Jahren Erfahrung in der Automobilindustrie. Spezialisiert auf IBM DOORS-basiertes Anforderungsmanagement, Freigabemanagement und die Schnittstelle zwischen Fachbereich, Entwicklung und Test.</p>
+        <p>Projekterfahrung bei VW, BMW, MAN und Daimler als Engineering-Dienstleister. Analytisch, strukturiert und lösungsorientiert mit starker Methodenkompetenz in Requirements Engineering, Prozessmanagement und agilen Vorgehensmodellen.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Berufserfahrung</div>
+
+        <div class="exp-item">
+          <div class="exp-company">Volkswagen Group Services GmbH</div>
+          <div class="exp-role">Systemarchitekt / Anforderungsmanager</div>
+          <div class="exp-period">2022 – 2024 · Wolfsburg</div>
+          <div class="exp-desc">Aufbau eines Freigabemanagementprozesses, Koordination aller Freigaben, Festlegung und Nachverfolgung von IBM DOORS-Modulen, Moderation technischer Reviews.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Projekt VW AG Wolfsburg</div>
+          <div class="exp-role">Systemingenieur / Anforderungsmanager</div>
+          <div class="exp-period">2017 – 2022 · Wolfsburg</div>
+          <div class="exp-desc">Strukturaufbau in DOORS für System- und Funktionsspezifikationen, Verlinkung von Modulen und Anforderungen, Erstellung von Ausleitungen und Reports.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Projekt BMW AG München</div>
+          <div class="exp-role">Systemingenieur / Anforderungsmanager</div>
+          <div class="exp-period">2012 – 2016 · München</div>
+          <div class="exp-desc">Erstellung und Strukturierung von System- und Funktionslastenheften, Implementierungssteuerung, Reifegradabstimmungen, Fehleranalyse und Versuchsdurchführung.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Projekt MAN Nutzfahrzeuge</div>
+          <div class="exp-role">Systemingenieur / Anforderungsmanager</div>
+          <div class="exp-period">2016 – 2017 · München</div>
+          <div class="exp-desc">Erstellung und Pflege von Funktionsspezifikationen, Moderation von Spezifikationsreviews.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">P+Z Engineering GmbH – Projekt BMW AG</div>
+          <div class="exp-role">Systemingenieur / Anforderungsmanager</div>
+          <div class="exp-period">2011 – 2012 · München</div>
+          <div class="exp-desc">Anforderungsdefinition für E-Maschine, Pflege von Funktionslastenheften, DOORS-Strukturaufbau.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">Requisis GmbH – Projekt Daimler AG</div>
+          <div class="exp-role">Requirements Engineer</div>
+          <div class="exp-period">2010 – 2011</div>
+          <div class="exp-desc">IBM DOORS-Beratung, Verlinkung von DOORS-Objekten, Dokumentenerzeugung, Import/Export von Modulen.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">Xtronic GmbH – Projekt Daimler AG</div>
+          <div class="exp-role">Anforderungsmanager</div>
+          <div class="exp-period">2008</div>
+          <div class="exp-desc">Erstellung von Lastenheften in DOORS, funktionale und explorative Tests.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFIL EN -->
+    <div class="lang-content" id="profil-en">
+      <div class="section">
+        <div class="section-label">Profile</div>
+        <p>Senior Requirements Engineer and Systems Engineer with over 15 years of experience in the automotive industry. Specialized in IBM DOORS-based requirements management, release management, and acting as the interface between business departments, development, and testing.</p>
+        <p>Project experience at VW, BMW, MAN, and Daimler as an engineering service provider. Analytical, structured, and solution-oriented with strong methodological expertise in requirements engineering, process management, and agile frameworks.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Professional Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-company">Volkswagen Group Services GmbH</div>
+          <div class="exp-role">System Architect / Requirements Manager</div>
+          <div class="exp-period">2022 – 2024 · Wolfsburg</div>
+          <div class="exp-desc">Established a release management process, coordinated all approvals, defined and tracked IBM DOORS modules, moderated technical reviews.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Project VW AG Wolfsburg</div>
+          <div class="exp-role">Systems Engineer / Requirements Manager</div>
+          <div class="exp-period">2017 – 2022 · Wolfsburg</div>
+          <div class="exp-desc">Structured DOORS for system and functional specifications, linked modules and requirements, created exports and reports.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Project BMW AG Munich</div>
+          <div class="exp-role">Systems Engineer / Requirements Manager</div>
+          <div class="exp-period">2012 – 2016 · Munich</div>
+          <div class="exp-desc">Created and structured system and functional specifications, managed implementation control and maturity level coordination.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – Project MAN Trucks</div>
+          <div class="exp-role">Systems Engineer / Requirements Manager</div>
+          <div class="exp-period">2016 – 2017 · Munich</div>
+          <div class="exp-desc">Created and maintained functional specifications, moderated specification reviews.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">P+Z Engineering GmbH – Project BMW AG</div>
+          <div class="exp-role">Systems Engineer / Requirements Manager</div>
+          <div class="exp-period">2011 – 2012 · Munich</div>
+          <div class="exp-desc">Requirements definition for electric motors, maintenance of functional specifications, DOORS structure setup.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">Requisis GmbH – Project Daimler AG</div>
+          <div class="exp-role">Requirements Engineer</div>
+          <div class="exp-period">2010 – 2011</div>
+          <div class="exp-desc">IBM DOORS consulting, linking DOORS objects, document generation, module import/export.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFIL TR -->
+    <div class="lang-content" id="profil-tr">
+      <div class="section">
+        <div class="section-label">Profil</div>
+        <p>Otomotiv sektöründe 15 yılı aşkın deneyime sahip Kıdemli Gereksinim Mühendisi ve Sistem Mühendisi. IBM DOORS tabanlı gereksinim yönetimi, onay yönetimi ve iş birimleri, geliştirme ve test ekipleri arasında köprü işlevi konusunda uzmanlaşmıştır.</p>
+        <p>VW, BMW, MAN ve Daimler projelerinde mühendislik hizmet sağlayıcısı olarak deneyim. Gereksinim mühendisliği, süreç yönetimi ve çevik yöntemler konusunda güçlü metodolojik yetkinliğe sahip.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">İş Deneyimi</div>
+
+        <div class="exp-item">
+          <div class="exp-company">Volkswagen Group Services GmbH</div>
+          <div class="exp-role">Sistem Mimarı / Gereksinim Yöneticisi</div>
+          <div class="exp-period">2022 – 2024 · Wolfsburg</div>
+          <div class="exp-desc">Onay yönetimi süreci kurulumu, IBM DOORS modüllerinin tanımlanması ve takibi, teknik değerlendirme toplantılarının moderasyonu.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – VW AG Projesi</div>
+          <div class="exp-role">Sistem Mühendisi / Gereksinim Yöneticisi</div>
+          <div class="exp-period">2017 – 2022 · Wolfsburg</div>
+          <div class="exp-desc">Sistem ve fonksiyon spesifikasyonları için DOORS yapılandırması, modüller arası bağlantı kurulumu, raporlama.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-company">IAV GmbH – BMW AG Projesi</div>
+          <div class="exp-role">Sistem Mühendisi / Gereksinim Yöneticisi</div>
+          <div class="exp-period">2012 – 2016 · Münih</div>
+          <div class="exp-desc">Sistem ve fonksiyon gereksinim belgelerinin oluşturulması ve yapılandırılması, uygulama koordinasyonu.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- ZERTIFIKATE -->
+    <div class="section">
+      <div class="lang-content active" id="cert-label-de"><div class="section-label">Zertifizierungen</div></div>
+      <div class="lang-content" id="cert-label-en"><div class="section-label">Certifications</div></div>
+      <div class="lang-content" id="cert-label-tr"><div class="section-label">Sertifikalar</div></div>
+
+      <div class="cert-item">
+        <strong>IREB CPRE Foundation Level</strong>
+        <span>Certified Professional for Requirements Engineering · 2026</span>
+      </div>
+      <div class="cert-item">
+        <strong>TÜV Rheinland Prozessmanager</strong>
+        <span>Geprüfte Qualifikation · 2026</span>
+      </div>
+      <div class="cert-item">
+        <strong>PSPO I – Professional Scrum Product Owner</strong>
+        <span>Scrum.org · Mai 2026</span>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="lang-content active" id="skills-label-de"><div class="section-label">Fachkenntnisse</div></div>
+      <div class="lang-content" id="skills-label-en"><div class="section-label">Core Skills</div></div>
+      <div class="lang-content" id="skills-label-tr"><div class="section-label">Temel Yetkinlikler</div></div>
+
+      <div class="skill-group">
+        <div class="skill-label">Tools</div>
+        <span class="skill-tag">IBM DOORS</span>
+        <span class="skill-tag">Codebeamer</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Confluence</span>
+        <span class="skill-tag">MS Office</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Methodik</div>
+        <span class="skill-tag">ASPICE SYS.2</span>
+        <span class="skill-tag">BPMN</span>
+        <span class="skill-tag">Scrum</span>
+        <span class="skill-tag">Kanban</span>
+        <span class="skill-tag">IREB</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Domänen</div>
+        <span class="skill-tag">Automotive</span>
+        <span class="skill-tag">Freigabemanagement</span>
+        <span class="skill-tag">Prozessmanagement</span>
+        <span class="skill-tag">Systemspezifikation</span>
+      </div>
+    </div>
+
+    <!-- AUSBILDUNG -->
+    <div class="section">
+      <div class="lang-content active" id="edu-label-de"><div class="section-label">Ausbildung</div></div>
+      <div class="lang-content" id="edu-label-en"><div class="section-label">Education</div></div>
+      <div class="lang-content" id="edu-label-tr"><div class="section-label">Eğitim</div></div>
+
+      <div class="edu-item">
+        <strong>Master of Engineering</strong>
+        <span>Wirtschaftsingenieurwesen / Projektmanagement<br>Beuth Hochschule Berlin · 2005–2008</span>
+      </div>
+      <div class="edu-item">
+        <strong>Diplom-Ingenieur (FH)</strong>
+        <span>Elektrotechnik / Kommunikationstechnik<br>Beuth Hochschule Berlin · 1998–2004</span>
+      </div>
+    </div>
+
+    <!-- SPRACHEN -->
+    <div class="section">
+      <div class="lang-content active" id="lang-label-de"><div class="section-label">Sprachen</div></div>
+      <div class="lang-content" id="lang-label-en"><div class="section-label">Languages</div></div>
+      <div class="lang-content" id="lang-label-tr"><div class="section-label">Diller</div></div>
+
+      <div class="edu-item">
+        <strong>Deutsch</strong>
+        <span>Muttersprache / C2</span>
+      </div>
+      <div class="edu-item">
+        <strong>Türkisch</strong>
+        <span>Muttersprache / C2</span>
+      </div>
+      <div class="edu-item">
+        <strong>Englisch</strong>
+        <span>Grundkenntnisse / A2 (in Weiterbildung)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 İsmail Özcan · Berlin · ismail.oezcan@yahoo.de
+</footer>
+
+<script>
+function setLang(lang) {
+  // Update buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // Hide all lang content
+  document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+
+  // Show selected language
+  document.querySelectorAll(`[id$="-${lang}"]`).forEach(el => el.classList.add('active'));
+
+  // Update html lang
+  document.documentElement.lang = lang;
+}
+</script>
+
+</body>
+</html>
