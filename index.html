@@ -212,6 +212,60 @@
     margin: 3px 3px 3px 0;
   }
 
+  .skill-bar-item { margin-bottom: 12px; }
+
+  .skill-bar-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .skill-bar-row strong {
+    color: var(--navy);
+  }
+
+  .skill-bar-row span {
+    color: var(--muted);
+  }
+
+  .skill-bar-track {
+    background: var(--border);
+    border-radius: 2px;
+    height: 5px;
+  }
+
+  .skill-bar-fill {
+    background: var(--gold);
+    height: 5px;
+    border-radius: 2px;
+  }
+
+  .skill-bar-fill.tier-fruehere {
+    background: #b9bec5;
+  }
+
+  .skill-bar-fill.tier-theoretisch {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--gold),
+      var(--gold) 3px,
+      transparent 3px,
+      transparent 6px
+    );
+    border: 1px solid var(--gold);
+    box-sizing: border-box;
+  }
+
+  .skill-group-note {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--muted);
+    margin: -6px 0 12px;
+  }
+
   .cert-item {
     background: var(--white);
     border: 1px solid var(--border);
@@ -665,44 +719,96 @@ Erstellung von Lastenheften in IBM DOORS für die Baureihe 221/218 bei Daimler A
 
       <div class="skill-group">
         <div class="skill-label">Requirements & ALM</div>
-        <span class="skill-tag">IBM DOORS</span>
-        <span class="skill-tag">Codebeamer</span>
-        <span class="skill-tag">DXL Scripting</span>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>IBM DOORS</strong><span class="tier-label" data-de="Expertenwissen" data-en="Expert" data-tr="Uzman">Expertenwissen</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Codebeamer</strong><span class="tier-label" data-de="Praxiserfahrung" data-en="Practical experience" data-tr="Pratik deneyim">Praxiserfahrung</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:68%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>DXL Scripting</strong><span class="tier-label" data-de="Grundkenntnisse" data-en="Basic knowledge" data-tr="Temel bilgi">Grundkenntnisse</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:32%;"></div></div>
+        </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-label">Projektmanagement & Kollaboration</div>
-        <span class="skill-tag">Jira</span>
-        <span class="skill-tag">Confluence</span>
-        <span class="skill-tag">MS Project</span>
-        <span class="skill-tag">MS Office</span>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>MS Office</strong><span class="tier-label" data-de="Expertenwissen" data-en="Expert" data-tr="Uzman">Expertenwissen</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Jira</strong><span class="tier-label" data-de="Praxiserfahrung" data-en="Practical experience" data-tr="Pratik deneyim">Praxiserfahrung</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:68%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>MS Project</strong><span class="tier-label" data-de="Praxiserfahrung" data-en="Practical experience" data-tr="Pratik deneyim">Praxiserfahrung</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:68%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Confluence</strong><span class="tier-label" data-de="Grundkenntnisse" data-en="Basic knowledge" data-tr="Temel bilgi">Grundkenntnisse</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:32%;"></div></div>
+        </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-label">Methodik & Standards</div>
-        <span class="skill-tag">ASPICE SYS.2</span>
-        <span class="skill-tag">IREB CPRE</span>
-        <span class="skill-tag">BPMN</span>
-        <span class="skill-tag">Scrum / PSPO I</span>
-        <span class="skill-tag">Kanban</span>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>IREB CPRE</strong><span class="tier-label" data-de="Expertenwissen" data-en="Expert" data-tr="Uzman">Expertenwissen</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>ASPICE SYS.2</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>BPMN</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Scrum / PSPO I</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Kanban</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-label">Automotive Tools</div>
-        <span class="skill-tag">INCA</span>
-        <span class="skill-tag">CANoe</span>
-        <span class="skill-tag">Trace32</span>
-        <span class="skill-tag">EDIABAS</span>
-        <span class="skill-tag">Simulink</span>
+        <div class="skill-group-note tier-label" data-de="Frühere Projekte — kein aktueller Schwerpunkt" data-en="Past projects — not a current focus" data-tr="Geçmiş projeler — güncel bir odak alanı değil">Frühere Projekte — kein aktueller Schwerpunkt</div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>INCA</strong><span class="tier-label" data-de="Frühere Projekte" data-en="Past projects" data-tr="Geçmiş projeler">Frühere Projekte</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-fruehere" style="width:12%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>CANoe</strong><span class="tier-label" data-de="Frühere Projekte" data-en="Past projects" data-tr="Geçmiş projeler">Frühere Projekte</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-fruehere" style="width:12%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Trace32</strong><span class="tier-label" data-de="Frühere Projekte" data-en="Past projects" data-tr="Geçmiş projeler">Frühere Projekte</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-fruehere" style="width:12%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>EDIABAS</strong><span class="tier-label" data-de="Frühere Projekte" data-en="Past projects" data-tr="Geçmiş projeler">Frühere Projekte</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-fruehere" style="width:12%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Simulink</strong><span class="tier-label" data-de="Frühere Projekte" data-en="Past projects" data-tr="Geçmiş projeler">Frühere Projekte</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-fruehere" style="width:12%;"></div></div>
+        </div>
       </div>
 
       <div class="skill-group">
         <div class="skill-label">Domänen</div>
         <span class="skill-tag">Automotive</span>
+        <span class="skill-tag">Anforderungsmanagement</span>
         <span class="skill-tag">Freigabemanagement</span>
         <span class="skill-tag">Prozessmanagement</span>
         <span class="skill-tag">Systemspezifikation</span>
-        <span class="skill-tag">Verteidigung</span>
       </div>
 
       <div class="skill-group">
@@ -834,6 +940,11 @@ function setLang(lang) {
 
   // Update html lang
   document.documentElement.lang = lang;
+
+  // Translate data-driven labels (e.g. skill tier labels)
+  document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
 }
 </script>
 
