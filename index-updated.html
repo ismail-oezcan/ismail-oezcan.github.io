@@ -246,6 +246,18 @@
     background: #b9bec5;
   }
 
+  .skill-bar-fill.tier-theoretisch {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--gold),
+      var(--gold) 3px,
+      transparent 3px,
+      transparent 6px
+    );
+    border: 1px solid var(--gold);
+    box-sizing: border-box;
+  }
+
   .skill-group-note {
     font-family: 'Arial', sans-serif;
     font-size: 11px;
@@ -743,11 +755,26 @@ Erstellung von Lastenheften in IBM DOORS für die Baureihe 221/218 bei Daimler A
 
       <div class="skill-group">
         <div class="skill-label">Methodik & Standards</div>
-        <span class="skill-tag">ASPICE SYS.2</span>
-        <span class="skill-tag">IREB CPRE</span>
-        <span class="skill-tag">BPMN</span>
-        <span class="skill-tag">Scrum / PSPO I</span>
-        <span class="skill-tag">Kanban</span>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>IREB CPRE</strong><span class="tier-label" data-de="Expertenwissen" data-en="Expert" data-tr="Uzman">Expertenwissen</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:100%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>ASPICE SYS.2</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>BPMN</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Scrum / PSPO I</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-row"><strong>Kanban</strong><span class="tier-label" data-de="Fundiertes Wissen (theoretisch)" data-en="Solid theoretical knowledge" data-tr="Sağlam teorik bilgi">Fundiertes Wissen (theoretisch)</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill tier-theoretisch" style="width:45%;"></div></div>
+        </div>
       </div>
 
       <div class="skill-group">
